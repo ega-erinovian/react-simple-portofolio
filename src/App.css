@@ -1,33 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap");
+
 * {
   padding: 0;
   margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  position: relative;
+  overflow-x: hidden;
+  background-color: #000;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --transparent-black: rgba(0, 0, 0, 0.5);
+  --primary-orange: #ff773c;
+  --primary-blue: #0d6efd;
+  --glowing-blue: #479dff;
 }
 
 /*********************** HEADER **********************/
 .header-container {
   height: 100vh;
   width: 100vw;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.6)),
-    url("https://images.unsplash.com/photo-1615125945743-d00475149dca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1031&q=80");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
+    url("https://images.unsplash.com/photo-1510832198440-a52376950479?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1048&q=80");
   background-size: cover;
   background-position: center;
-  overflow-x: hidden;
+}
+
+.header-container .container-fluid {
+  height: 100%;
+  color: #fff;
 }
 
 .header-container h1 {
   font-weight: 900;
-  font-size: 8rem;
-  transition: all ease-in-out 0.2s;
   width: fit-content;
+  font-size: 8rem;
+  transition: all 0.2s;
 }
 
 .header-container h1:hover {
-  color: #fff;
   cursor: default;
-  text-shadow: -15px 10px 0 rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0 40px var(--primary-orange);
 }
 
-.header-container .container-fluid {
-  padding-top: 40vh;
-  margin-left: 5vw;
+.header-container .typing-effect {
+  font-size: 2rem;
+}
+
+/*********************** ABOUT **********************/
+.about-container {
+  height: 50vh;
+  height: 50vh;
+}
+
+.about-container .container {
+  padding: 10rem 0;
+}
+
+.about-container h1 {
+  font-weight: 900;
+  font-size: 5rem;
+  margin-bottom: 3rem;
+}
+
+.about-container .profile-img img {
+  width: 100%;
+}
+
+.about-container h2 {
+  font-weight: 500;
+  font-size: 5rem;
+}
+
+.about-container p {
+  text-align: justify;
+}
+
+.skill-data {
+  position: relative;
+  padding: 1rem 1rem;
+  margin: 2rem 0;
+  border-radius: 0.5rem;
+  transition: 0.3s ease all;
+}
+
+.skill-data:hover {
+  transform: scale(1.01);
+  box-shadow: 0 2px 2px var(--transparent-black);
+  cursor: pointer;
+}
+
+.skills-percentage {
+  position: absolute;
+  right: 5%;
+}
+.skills-names {
+  display: flex;
+  align-items: center;
+}
+.skill-bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: var(--primary-blue);
+  height: 0.25rem;
+  border-radius: 0.5rem;
+  z-index: var(--z-back);
+}
+
+/***************** MEDIA QUERY *****************/
+@media screen and (max-width: 768px) {
+  /*********************** HEADER **********************/
+  .header-container .container-fluid {
+    padding: 0;
+    text-align: center;
+  }
+  .header-container h1 {
+    font-size: 3rem;
+  }
+  .header-container h1:hover {
+    text-shadow: 0px 0.5rem 0 var(--transparent-black);
+  }
+  .header-container h2 {
+    font-size: 1rem;
+  }
+
+  /*********************** ABOUT **********************/
+  .about-container .container {
+    padding: 5rem 1.5rem;
+  }
+
+  .about-container .profile-img img {
+    padding: 0 0 2rem 0;
+  }
+
+  .about-container h2 {
+    font-weight: 500;
+    font-size: 1.88rem;
+    text-align: center;
+  }
+
+  .skill-container .container-fluid {
+    padding: 0;
+    margin: 0;
+  }
 }
